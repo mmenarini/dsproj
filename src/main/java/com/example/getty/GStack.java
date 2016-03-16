@@ -80,7 +80,10 @@ public class GStack {
 	 * @return the most recently inserted item in the stack, or null, if empty.
 	 */
 	public Object peek() {
-		return internalArray[topIndex];
+		if (isEmpty())
+			return null;
+		else
+			return internalArray[topIndex];
 	}
 
 	/**
@@ -88,10 +91,14 @@ public class GStack {
 	 * 
 	 */
 	public Object pop() {
-		Object topItem = peek();
-		internalArray[topIndex] = null;
-		topIndex -= 1;
-		return topItem;
+		if (isEmpty())
+			return null;
+		else {			
+			Object topItem = peek();
+			internalArray[topIndex] = null;
+			topIndex -= 1;
+			return topItem;
+		}
 	}
 
 	/**
@@ -100,9 +107,14 @@ public class GStack {
 	 * @param x
 	 *            the item to insert.
 	 */
-	public void push(Object x) {
-		topIndex += 1;
-		internalArray[topIndex] = x;
+	public boolean push(Object x) {
+		if (isFull()) {
+			return false;
+		} else {			
+			topIndex += 1;
+			internalArray[topIndex] = x;
+			return true;
+		}
 	}
 
 	/**
