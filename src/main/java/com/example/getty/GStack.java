@@ -91,14 +91,12 @@ public class GStack {
 	 * 
 	 */
 	public Object pop() {
-		if (isEmpty())
-			return null;
-		else {			
-			Object topItem = peek();
+		Object topItem = peek();
+		if (!isEmpty()) {
 			internalArray[topIndex] = null;
 			topIndex -= 1;
-			return topItem;
 		}
+		return topItem;
 	}
 
 	/**
