@@ -85,11 +85,10 @@ public class GStack {
 	 */
 	public Object peek() {
 		error = false;
-		if (topIndex <= -1 || topIndex >= this.capacity) {
-			error = true;
+		if (isEmpty())
 			return null;
-		}
-		return internalArray[topIndex];
+		else
+			return internalArray[topIndex];
 	}
 
 	/**
@@ -99,12 +98,10 @@ public class GStack {
 	public Object pop() {
 		error = false;
 		Object topItem = peek();
-		if (topIndex <= -1) {
-			error = true;
-			return null;
+		if (!isEmpty()) {			
+			internalArray[topIndex] = null;
+			topIndex --;
 		}
-		internalArray[topIndex] = null;
-		topIndex -= 1;
 		return topItem;
 	}
 
@@ -114,14 +111,14 @@ public class GStack {
 	 * @param x
 	 *            the item to insert.
 	 */
-	public void push(Object x) {
+	public boolean push(Object x) {
 		error = false;
-		topIndex += 1;
-		if (topIndex >= this.capacity) {
-			error = true;
-			return;
-		} else {			
+		if (isFull()) {
+			return false;
+		} else {
+			topIndex ++;
 			internalArray[topIndex] = x;
+			return true;
 		}
 	}
 
