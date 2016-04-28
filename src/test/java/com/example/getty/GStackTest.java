@@ -56,42 +56,42 @@ public class GStackTest extends TestCase {
 		gstack.peek();
 	}
 	
-	public void testPushAntiOverflow() {
-		gstack = new GStack(4);
-		gstack.push(7);
-		gstack.push(8);
-//		assertEquals(2, gstack.load());
-		gstack.load();
-//		assertEquals(8, gstack.peek());
-		gstack.peek();
-		gstack.push(9);
-		gstack.push(10);
-		gstack.push(11);
-//		assertEquals(4, gstack.load());
-		gstack.load();
-//		assertEquals(10, gstack.peek());
-		gstack.peek();
-		System.out.println("had run anti-overflow");
-	}
-	
-	public void testPopAntiUnderflow() {
-		gstack.push(9);
-		gstack.push(-2);
-		gstack.pop();
-//		assertEquals(1, gstack.load());
-		gstack.load();
-//		assertEquals(9, gstack.peek());
-		gstack.peek();
-//		assertEquals(9, gstack.pop());
-		gstack.pop();
-//		assertEquals(0, gstack.load());
-		gstack.load();
-//		assertEquals(null, gstack.peek());
-		gstack.peek();
-		gstack.pop();
-//		assertEquals(0, gstack.load());
-		gstack.load();
-		System.out.println("had run anti-underflow");
-	}
+//	public void testPushAntiOverflow() {
+//		gstack = new GStack(4);
+//		gstack.push(7);
+//		gstack.push(8);
+////		assertEquals(2, gstack.load());
+//		gstack.load();
+////		assertEquals(8, gstack.peek());
+//		gstack.peek();
+//		gstack.push(9);
+//		gstack.push(10);
+//		gstack.push(11);
+////		assertEquals(4, gstack.load());
+//		gstack.load();
+////		assertEquals(10, gstack.peek());
+//		gstack.peek();
+//		System.out.println("had run anti-overflow");
+//	}
+//	
+//	public void testPopAntiUnderflow() {
+//		gstack.push(9);
+//		gstack.push(-2);
+//		gstack.pop();
+////		assertEquals(1, gstack.load());
+//		gstack.load();
+////		assertEquals(9, gstack.peek());
+//		gstack.peek();
+////		assertEquals(9, gstack.pop());
+//		gstack.pop();
+////		assertEquals(0, gstack.load());
+//		gstack.load();
+////		assertEquals(null, gstack.peek());
+//		gstack.peek();
+//		gstack.pop();
+////		assertEquals(0, gstack.load());
+//		gstack.load();
+//		System.out.println("had run anti-underflow");
+//	}
 	
 }
