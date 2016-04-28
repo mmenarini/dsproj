@@ -26,7 +26,8 @@ public class GStack {
 
 	private Object[] internalArray;
 	private int topIndex;
-	private boolean error = false;
+	public boolean error;
+	private int capacity;
 
 	static final int DEFAULT_CAPACITY = 8;
 
@@ -45,7 +46,9 @@ public class GStack {
 	 */
 	public GStack(int capacity) {
 		internalArray = new Object[capacity];
+		this.capacity = capacity;
 		topIndex = -1;
+		error = false;
 	}
 
 	/**
@@ -81,7 +84,8 @@ public class GStack {
 	 * @return the most recently inserted item in the stack, or null, if empty.
 	 */
 	public Object peek() {
-		if (topIndex == -1) {
+		error = false;
+		if (topIndex <= -1 || topIndex >= this.capacity) {
 			error = true;
 			return null;
 		}
@@ -93,8 +97,9 @@ public class GStack {
 	 * 
 	 */
 	public Object pop() {
+		error = false;
 		Object topItem = peek();
-		if (topIndex == -1) {
+		if (topIndex <= -1) {
 			error = true;
 			return null;
 		}
@@ -110,11 +115,14 @@ public class GStack {
 	 *            the item to insert.
 	 */
 	public void push(Object x) {
+		error = false;
 		topIndex += 1;
-		if (topIndex == DEFAULT_CAPACITY) {
+		if (topIndex >= this.capacity) {
 			error = true;
+			return;
+		} else {			
+			internalArray[topIndex] = x;
 		}
-		internalArray[topIndex] = x;
 	}
 
 	/**
