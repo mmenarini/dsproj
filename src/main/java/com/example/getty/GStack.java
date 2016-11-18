@@ -107,13 +107,12 @@ public class GStack {
 	 * @param x
 	 *            the item to insert.
 	 */
-	public boolean push(Object x) {
+	public void push(Object x) {
 		if (isFull()) {
-			return false;
+			throw new RuntimeException("stack is full");
 		} else {			
 			topIndex += 1;
 			internalArray[topIndex] = x;
-			return true;
 		}
 	}
 
