@@ -77,26 +77,44 @@ public class GStackTest extends TestCase {
 		assertEquals(0, gstack.load());
 	}
 	
-	public void testDifferentCapacity() {
-		gstack = new GStack(3);
-		gstack.push(10);
-		gstack.push(10);
-		gstack.push(10);
-		assertEquals(3, gstack.load());
+	public void testDifferentCapacitySmall() {
+		GStack gstack1 = new GStack(3);
+		for (int i = 0; i < 3; i ++)
+			gstack1.push(10);
+		assertEquals(3, gstack1.load());
 		try {
-			gstack.push(10);
+			gstack1.push(10);
 			fail("should not push when stack is full");
 		} catch (Exception e) {}
-		assertEquals(3, gstack.load());
-		gstack.pop();
-		gstack.pop();
-		gstack.pop();
-		assertEquals(0, gstack.load());
+		assertEquals(3, gstack1.load());
+		for (int i = 0; i < 3; i ++)
+			gstack1.pop();
+		assertEquals(0, gstack1.load());
 		try {
-			gstack.pop();
+			gstack1.pop();
 			fail("should not pop when stack is empty");
 		} catch (Exception e) {}
-		assertEquals(0, gstack.load());
+		assertEquals(0, gstack1.load());
+	}
+	
+	public void testDifferentCapacityLarge() {
+		GStack gstack2 = new GStack(20);
+		for (int i = 0; i < 20; i ++)
+			gstack2.push(10);
+		assertEquals(20, gstack2.load());
+		try {
+			gstack2.push(10);
+			fail("should not push when stack is full");
+		} catch (Exception e) {}
+		assertEquals(20, gstack2.load());
+		for (int i = 0; i < 20; i ++)
+			gstack2.pop();
+		assertEquals(0, gstack2.load());
+		try {
+			gstack2.pop();
+			fail("should not pop when stack is empty");
+		} catch (Exception e) {}
+		assertEquals(0, gstack2.load());
 	}
 	
 }
