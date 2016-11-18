@@ -55,7 +55,7 @@ public class GStackTest extends TestCase {
 		assertEquals(10, gstack.peek());
 	}
 	
-	public void testPopAntiUnderflow() {
+	public void testPopPeekAntiUnderflow() {
 		gstack.push(9);
 		gstack.push(-2);
 		gstack.pop();
@@ -63,8 +63,14 @@ public class GStackTest extends TestCase {
 		assertEquals(9, gstack.peek());
 		assertEquals(9, gstack.pop());
 		assertEquals(0, gstack.load());
-		assertEquals(null, gstack.peek());
-		gstack.pop();
+		try {
+			gstack.pop();
+			fail("should not pop when stack is empty");
+		} catch (Exception e) {}
+		try {
+			gstack.peek();
+			fail("should not peek when stack is empty");
+		} catch (Exception e) {}
 		assertEquals(0, gstack.load());
 	}
 	

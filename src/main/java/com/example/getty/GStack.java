@@ -81,7 +81,7 @@ public class GStack {
 	 */
 	public Object peek() {
 		if (isEmpty())
-			return null;
+			throw new RuntimeException("stack is empty");
 		else
 			return internalArray[topIndex];
 	}
@@ -91,12 +91,14 @@ public class GStack {
 	 * 
 	 */
 	public Object pop() {
-		Object topItem = peek();
 		if (!isEmpty()) {
+			Object topItem = internalArray[topIndex];
 			internalArray[topIndex] = null;
 			topIndex -= 1;
+			return topItem;
+		} else {
+			throw new RuntimeException("stack is empty");
 		}
-		return topItem;
 	}
 
 	/**
