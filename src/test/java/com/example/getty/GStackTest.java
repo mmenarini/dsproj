@@ -74,4 +74,23 @@ public class GStackTest extends TestCase {
 		assertEquals(0, gstack.load());
 	}
 	
+	public void testDifferentCapacity() {
+		gstack = new GStack(3);
+		gstack.push(10);
+		gstack.push(10);
+		gstack.push(10);
+		assertEquals(3, gstack.load());
+		assertFalse(gstack.push(10));
+		assertEquals(3, gstack.load());
+		gstack.pop();
+		gstack.pop();
+		gstack.pop();
+		assertEquals(0, gstack.load());
+		try {
+			gstack.pop();
+			fail("should not pop when stack is empty");
+		} catch (Exception e) {}
+		assertEquals(0, gstack.load());
+	}
+	
 }
