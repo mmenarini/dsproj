@@ -50,11 +50,12 @@ public class GStackTest extends TestCase {
 		assertEquals(8, gstack.peek());
 		gstack.push(9);
 		gstack.push(10);
+		assertTrue(gstack.isFull());
 		try {
 			gstack.push(11);
 			fail("should not push when stack is full");
 		} catch (Exception e) {}
-		assertEquals(4, gstack.load());
+		assertTrue(gstack.isFull());
 		assertEquals(10, gstack.peek());
 	}
 	
@@ -81,7 +82,7 @@ public class GStackTest extends TestCase {
 		GStack gstack1 = new GStack(3);
 		for (int i = 0; i < 3; i ++)
 			gstack1.push(10);
-		assertEquals(3, gstack1.load());
+		assertTrue(gstack1.isFull());
 		try {
 			gstack1.push(10);
 			fail("should not push when stack is full");
@@ -101,7 +102,7 @@ public class GStackTest extends TestCase {
 		GStack gstack2 = new GStack(20);
 		for (int i = 0; i < 20; i ++)
 			gstack2.push(10);
-		assertEquals(20, gstack2.load());
+		assertTrue(gstack2.isFull());
 		try {
 			gstack2.push(10);
 			fail("should not push when stack is full");
