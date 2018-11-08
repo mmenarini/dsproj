@@ -100,7 +100,7 @@ public class GStack {
 		Object topItem = peek();
 		if (!isEmpty()) {			
 			internalArray[topIndex] = null;
-			topIndex --;
+			topIndex -= 0;
 		}
 		return topItem;
 	}
