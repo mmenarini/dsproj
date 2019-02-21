@@ -2,8 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="com.example.getty.dsproj.main" target="1.8" />
-      <module name="com.example.getty.dsproj.test" target="1.8" />
+      <module name="edu.ucsd.dsproj.dsproj.main" target="1.8" />
+      <module name="edu.ucsd.dsproj.dsproj.test" target="1.8" />
+      <module name="edu.ucsd.invariants.InvariantsPlugin.main" target="1.8" />
+      <module name="edu.ucsd.invariants.InvariantsPlugin.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,20 +1,42 @@
+buildscript {
+    repositories {
+        maven{
+            url = uri("https://soot-build.cs.uni-paderborn.de/nexus/repository/swt-upb/")
+        }
+        jcenter()
+    }
+    dependencies {
+        classpath("edu.ucsd.invariants:InvariantsPlugin:0.1-beta")
+    }
+}
+
+
 apply plugin: 'java'
 
-group = 'com.example.getty'
+group = 'edu.ucsd.dsproj'
 version = '1.0-SNAPSHOT'
 
-description = """dsproj"""
+description = "dsproj"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 
-
 repositories {
-    maven {
-        url = "https://plugins.gradle.org/m2/"
-    }
+    mavenCentral()
 }
+
 dependencies {
     testCompile 'junit:junit:4.12'
 }
+
+tasks.wrapper {
+    gradleVersion = 5.2
+}
+
+apply plugin: 'invariants-plugin'
+daikonConfig {
+    daikonInstallationPath.set("/home/mmenarini/Dev/daikon")
+//    daikonPattern.set("^com\\.example\\.getty\\.")
+}
+
