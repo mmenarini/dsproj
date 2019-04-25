@@ -31,12 +31,12 @@ dependencies {
 }
 
 tasks.wrapper {
-    gradleVersion = 5.2
+    gradleVersion = 5.4
 }
 
 apply plugin: 'invariants-plugin'
 //daikonConfig {
-//    daikonInstallationPath.set("/home/mmenarini/Dev/daikon")
+//    daikonInstallationPath.set("/Users/corac/daikon")
 ////    daikonPattern.set("^com\\.example\\.getty\\.")
 //}
 
