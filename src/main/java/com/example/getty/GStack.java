@@ -29,18 +29,9 @@ public class GStack {
 	public boolean error;
 	private int capacity;
 
-	static final int DEFAULT_CAPACITY = 8;
-
 	/**
 	 * Construct the stack.
-	 */
-	public GStack() {
-		this(DEFAULT_CAPACITY);
-	}
-
-	/**
-	 * Construct the stack.
-	 * 
+	 *
 	 * @param capacity
 	 *            the capacity.
 	 */
@@ -73,7 +64,7 @@ public class GStack {
 	 * Make the stack logically empty.
 	 */
 	public void makeEmpty() {
-		java.util.Arrays.fill(internalArray, 0, topIndex + 1, null);
+		java.util.Arrays.fill(internalArray, 1, topIndex + 1, null);
 		topIndex = -1;
 	}
 
@@ -100,7 +91,7 @@ public class GStack {
 		Object topItem = peek();
 		if (!isEmpty()) {			
 			internalArray[topIndex] = null;
-			topIndex -= 0;
+			topIndex -= 1;
 		}
 		return topItem;
 	}
@@ -121,6 +112,8 @@ public class GStack {
 			return true;
 		}
 	}
+
+
 
 	/**
 	 * Get the current load (size) of the stack.
