@@ -13,6 +13,16 @@ public class GStackTest extends TestCase {
 		gstack = new GStack(8);
 	}
 
+	/*public void testShuffle() {
+		gstack.push(11);
+		gstack.push(3);
+		gstack.push(22);
+		assertEquals(22, gstack.peek());
+		gstack.shuffle();
+		assertEquals(22, gstack.peek());
+
+	}*/
+
 	/*public void testReverse() {
 		gstack.push(11);
 		gstack.push(3);

@@ -16,7 +16,9 @@ package com.example.getty;
 // Overflow and Underflow thrown as needed
 
 import java.util.ListIterator;
+import java.util.Random;
 import java.util.Stack;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Array-based implementation of the stack. Added functionalities and
@@ -117,6 +119,25 @@ public class GStack {
 	}
 
 	/**
+	 * Insert a new item into the stack at the index y, if not already full.
+	 *
+	 * @param x
+	 *            the item to insert.
+	 * @param y
+	 * 			  the index in the stack.
+	 */
+	/*public boolean pushTo(Object x, int y) {
+		error = false;
+		if (isFull()) {
+			return false;
+		} else {
+			topIndex ++;
+			internalArray[y] = x;
+			return true;
+		}
+	}*/
+
+	/**
 	 * Sort the contents of the stack in ascending order.
 	 * Only applies to stacks of ints.
 	 *
@@ -180,9 +201,14 @@ public class GStack {
 	 * Randomize the order of the contents of the stack.
 	 *
 	 */
-	public void randomize() {
-
-	}
+	/*public void shuffle() {
+		Random rnd = ThreadLocalRandom.current();
+		if (!isEmpty()) {
+			int index = rnd.nextInt(load());
+			Object temp = pop();
+			pushTo(temp, index);
+		}
+	}*/
 
 	/**
 	 * Get the current load (size) of the stack.
