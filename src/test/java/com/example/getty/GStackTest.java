@@ -4,6 +4,8 @@ import java.util.*;
 
 import junit.framework.TestCase;
 
+import static sun.misc.Version.print;
+
 public class GStackTest extends TestCase {
 	private GStack gstack;
 
@@ -11,13 +13,31 @@ public class GStackTest extends TestCase {
 		gstack = new GStack(8);
 	}
 
-	public void testMakeEmpty() {
+	/*public void testReverse() {
+		gstack.push(11);
+		gstack.push(3);
+		gstack.push(22);
+		assertEquals(22, gstack.peek());
+		gstack.reverse();
+		assertEquals(11, gstack.peek());
+	}*/
+
+	/*public void testSort() {
+		gstack.push(11);
+		gstack.push(3);
+		gstack.push(22);
+		assertEquals(22, gstack.peek());
+		gstack.sort();
+		assertEquals(3, gstack.peek());
+	}*/
+
+	/*public void testMakeEmpty() {
 		gstack.push(11);
 		assertEquals(11, gstack.peek());
 		gstack.peek();
 		gstack.makeEmpty();
 		assertEquals(0, gstack.load());
-	}
+	}*/
 
 	public void testPush() {
 		gstack.push(11);

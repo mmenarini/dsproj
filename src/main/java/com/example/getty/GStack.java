@@ -15,6 +15,9 @@ package com.example.getty;
 // ******************ERRORS********************************
 // Overflow and Underflow thrown as needed
 
+import java.util.ListIterator;
+import java.util.Stack;
+
 /**
  * Array-based implementation of the stack. Added functionalities and
  * restrictions for research purpose
@@ -113,7 +116,73 @@ public class GStack {
 		}
 	}
 
+	/**
+	 * Sort the contents of the stack in ascending order.
+	 * Only applies to stacks of ints.
+	 *
+	 */
+	/*public void sort() {
+		if (!isEmpty()) {
+			int topItem = (int) pop();
+			sort();
+			sortedInsert(topItem);
+		}
+	}*/
 
+	/**
+	 * Insert the sorted contents of the stack in ascending order.
+	 * Only applies to stacks of ints.
+	 *
+	 */
+	/*public void sortedInsert(int top) {
+		if (isEmpty() || top < (int) peek()) {
+			push(top);
+			return;
+		} else {
+			int temp = (int) pop();
+			sortedInsert(top);
+			push(temp);
+		}
+	}*/
+
+	/**
+	 * Reverse the order of the contents of the stack.
+	 *
+	 */
+	/*public void reverse() {
+		if (!isEmpty()) {
+			int temp = (int) peek();
+			pop();
+			reverse();
+			insertLast(temp);
+		} else {
+			return;
+		}
+	}*/
+
+	/**
+	 * Insert the item last in the stack.
+	 *
+	 */
+	/*public void insertLast(int item) {
+		if (isEmpty()) {
+			push(item);
+		} else {
+			int temp = (int) peek();
+			pop();
+			insertLast(item);
+			push(temp);
+		}
+	}*/
+
+
+	/**
+	 * Randomize the order of the contents of the stack.
+	 *
+	 */
+	public void randomize() {
+
+	}
 
 	/**
 	 * Get the current load (size) of the stack.
