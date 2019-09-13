@@ -11,34 +11,37 @@ public class GStackTest extends TestCase {
 		gstack = new GStack();
 	}
 
+	public void testSomeListAppendMethod() {
+		ArrayList<String> someList = new ArrayList<String>();
+		someList.add("one");
+		assertEquals("one", someList.get(0));
+		gstack.someListAppendMethod(someList);
+		assertEquals("one some append", someList.get(0));
+	}
+
 	public void testPush() {
 		gstack.push(11);
-//		assertEquals(11, gstack.peek());
+		assertEquals(11, gstack.peek());
 		gstack.peek();
 		gstack.push(22);
-//		assertEquals(22, gstack.peek());
+		assertEquals(22, gstack.peek());
 		gstack.peek();
-//		assertEquals(2, gstack.load());
+		assertEquals(2, gstack.load());
 		gstack.load();
 	}
 
 	public void testPop() {
-		gstack.push(3);
-//		assertEquals(3, gstack.pop());
-		gstack.pop();
-//		assertEquals(0, gstack.load());
-		gstack.load();
 		gstack.push(8);
 		gstack.push(9);
-//		assertEquals(2, gstack.load());
+		assertEquals(2, gstack.load());
 		gstack.load();
-//		assertEquals(9, gstack.pop());
+		assertEquals(9, gstack.pop());
 		gstack.pop();
-//		assertEquals(1, gstack.load());
+		assertEquals(1, gstack.load());
 		gstack.load();
-//		assertEquals(8, gstack.pop());
+		assertEquals(8, gstack.pop());
 		gstack.pop();
-//		assertEquals(0, gstack.load());
+		// assertEquals(0, gstack.load());
 		gstack.load();
 	}
 	
@@ -46,13 +49,13 @@ public class GStackTest extends TestCase {
 		gstack.push(4);
 		gstack.push(5);
 		gstack.push(6);
-//		assertEquals(3, gstack.load());
+		assertEquals(3, gstack.load());
 		gstack.load();
-//		assertEquals(6, gstack.peek());
+		assertEquals(6, gstack.peek());
 		gstack.peek();
-//		assertEquals(3, gstack.load());
+		assertEquals(3, gstack.load());
 		gstack.load();
-//		assertEquals(6, gstack.peek());
+		assertEquals(6, gstack.peek());
 		gstack.peek();
 	}
 	
