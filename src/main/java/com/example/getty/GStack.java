@@ -15,6 +15,8 @@ package com.example.getty;
 // ******************ERRORS********************************
 // Overflow and Underflow thrown as needed
 
+import java.util.ArrayList;
+
 /**
  * Array-based implementation of the stack. Added functionalities and
  * restrictions for research purpose
@@ -28,6 +30,15 @@ public class GStack {
 	private int topIndex;
 	public boolean error;
 	private int capacity;
+
+
+	public ArrayList<String> someListAppendMethod(ArrayList<String> input) {
+		for (int index = 0; index < input.size(); index++) {
+			String item = input.get(index);
+			input.set(index, item+" some append");
+		}
+		return input;
+	}
 
 	static final int DEFAULT_CAPACITY = 8;
 
