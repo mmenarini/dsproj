@@ -55,6 +55,22 @@ public class GStackTest extends TestCase {
 //		assertEquals(6, gstack.peek());
 		gstack.peek();
 	}
+
+	public void testPopUntil() {
+		gstack = new GStack(5);
+		gstack.push(2);
+		gstack.push("cat");
+		gstack.push(new GStack(2));
+		gstack.push(5);
+
+		gstack.popUntil(2);
+		assertEquals(gstack.peek(),5);
+
+		gstack = new GStack();
+		gstack.push(1);
+		gstack.push(2);
+		gstack.popUntil(1);
+	}
 	
 //	public void testPushAntiOverflow() {
 //		gstack = new GStack(4);
