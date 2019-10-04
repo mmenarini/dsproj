@@ -56,7 +56,7 @@ public class GStackTest extends TestCase {
 		gstack.peek();
 	}
 
-	public void testPopUntil() {
+	/*public void testPopUntil() {
 		gstack = new GStack(5);
 		gstack.push(2);
 		gstack.push("cat");
@@ -70,7 +70,7 @@ public class GStackTest extends TestCase {
 		gstack.push(1);
 		gstack.push(2);
 		gstack.popUntil(1);
-	}
+	}*/
 	
 //	public void testPushAntiOverflow() {
 //		gstack = new GStack(4);

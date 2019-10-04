@@ -77,11 +77,11 @@ public class GStack {
 		topIndex = -1;
 	}
 
-	public void popUntil(Object text) {
+	/*public void popUntil(Object text) {
 		while(this.peek() != text){
 			this.pop();
 		}
-	}
+	}*/
 
 	/**
 	 * Get the most recently inserted item in the stack. Does not alter the
