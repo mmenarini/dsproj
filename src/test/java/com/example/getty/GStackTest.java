@@ -1,7 +1,5 @@
 package com.example.getty;
 
-import java.util.*;
-
 import junit.framework.TestCase;
 
 public class GStackTest extends TestCase {
